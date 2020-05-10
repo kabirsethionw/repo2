@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<form  name="ab" onsubmit="myfunction(window.document.ab.fname.value)">
+  Type Month(in numeric): <input type="text" name="fname"><br>
+  <input type="submit" value="Submit">
+</form>
+
+
+<p id="demo"></p>
+
+<script>
+function myfunction(offset) {
+	
+	var d = new Date();
+    var c = d.getMonth() + parseInt(offset);
+    var y = 1900+ d.getYear() + parseInt(c/11);
+    c = c%11;
+    d.setMonth(c);
+    d.setYear(y);
+  alert(d.toDateString());
+}
+</script>
+
+</body>
+</html>
